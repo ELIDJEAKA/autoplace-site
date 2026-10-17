@@ -1,0 +1,14 @@
+# Environnement de dev (serveur elidjeaka-dev, même machine que l'API et le dashboard).
+# Utilisé par .github/workflows/deploy-dev.yml : IMAGE est fourni au moment du déploiement.
+services:
+  site:
+    image: ${IMAGE:?IMAGE manquante}
+    container_name: autoplace-site-dev
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3

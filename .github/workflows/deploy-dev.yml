@@ -1,0 +1,126 @@
+name: CI / Déploiement dev
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  DEPLOY_HOST: 45.90.161.191 # elidjeaka-dev (même serveur que l'API et le dashboard)
+  DEPLOY_DIR: autoplace-site-dev
+  SITE_PORT: 3000
+
+jobs:
+  check:
+    name: Lint, types et build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run lint
+      - run: npm run build
+
+  build:
+    name: Image Docker (GHCR)
+    needs: check
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/dev')
+    runs-on: ubuntu-latest
+    environment: dev
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      image: ${{ steps.meta.outputs.image }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: meta
+        run: |
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
+          echo "base=ghcr.io/${owner}/autoplace-site" >> "$GITHUB_OUTPUT"
+          echo "image=ghcr.io/${owner}/autoplace-site:dev-${GITHUB_SHA::12}" >> "$GITHUB_OUTPUT"
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          build-args: |
+            VITE_SITE_URL=${{ vars.VITE_SITE_URL || 'http://45.90.161.191:3000' }}
+            VITE_DASHBOARD_URL=${{ vars.VITE_DASHBOARD_URL || 'http://45.90.161.191:5173' }}
+            VITE_PLAY_STORE_URL=${{ vars.VITE_PLAY_STORE_URL }}
+            VITE_APP_STORE_URL=${{ vars.VITE_APP_STORE_URL }}
+            VITE_CONTACT_EMAIL=${{ vars.VITE_CONTACT_EMAIL || 'contact@autoplace.ci' }}
+            VITE_CONTACT_PHONE=${{ vars.VITE_CONTACT_PHONE }}
+          tags: |
+            ${{ steps.meta.outputs.image }}
+            ${{ steps.meta.outputs.base }}:dev
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Déploiement dev (elidjeaka-dev)
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: http://45.90.161.191:3000
+    permissions:
+      contents: read
+      packages: read
+    env:
+      IMAGE: ${{ needs.build.outputs.image }}
+      SSH_USER: ${{ vars.DEPLOY_SSH_USER || secrets.DEPLOY_SSH_USER }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clé SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          if [ -n "${{ secrets.DEPLOY_KNOWN_HOSTS }}" ]; then
+            echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          else
+            ssh-keyscan -H "$DEPLOY_HOST" > ~/.ssh/known_hosts
+          fi
+          printf 'Host target\n  HostName %s\n  User %s\n  IdentityFile ~/.ssh/id_deploy\n' "$DEPLOY_HOST" "$SSH_USER" > ~/.ssh/config
+
+      - name: Envoi de la configuration
+        run: |
+          ssh target "mkdir -p ~/$DEPLOY_DIR"
+          scp deploy/docker-compose.dev.yml target:"$DEPLOY_DIR/docker-compose.yml"
+
+      - name: Mise à jour du conteneur
+        run: |
+          ssh target "IMAGE='$IMAGE' DEPLOY_DIR='$DEPLOY_DIR' GHCR_USER='${{ github.actor }}' GHCR_TOKEN='${{ secrets.GITHUB_TOKEN }}' bash -s" <<'EOF'
+          set -euo pipefail
+          cd ~/"$DEPLOY_DIR"
+          echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+          trap 'docker logout ghcr.io >/dev/null' EXIT
+          echo "IMAGE=$IMAGE" > .image
+          docker compose --env-file .image pull
+          docker compose --env-file .image up -d --remove-orphans
+          docker image prune -f
+          EOF
+
+      - name: Vérification
+        run: |
+          for i in $(seq 1 30); do
+            if curl -fsS -o /dev/null "http://$DEPLOY_HOST:$SITE_PORT/"; then echo "Site vitrine en ligne"; exit 0; fi
+            sleep 2
+          done
+          ssh target "cd ~/$DEPLOY_DIR && docker compose --env-file .image logs --tail 80 site"
+          exit 1
