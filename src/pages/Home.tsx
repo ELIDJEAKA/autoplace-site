@@ -6,7 +6,6 @@ import { CtaBand } from '../components/CtaBand';
 import { Faq } from '../components/Faq';
 import { HeroStage } from '../components/HeroStage';
 import { Icon, type IconName } from '../components/Icon';
-import { Marquee } from '../components/Marquee';
 import { PhoneMockup } from '../components/PhoneMockup';
 import { Reveal } from '../components/Reveal';
 import { ServiceIcon } from '../components/ServiceIcon';
@@ -287,7 +286,6 @@ export function Home() {
         </div>
       </section>
 
-      <Marquee />
 
       <section className="section section--muted how" aria-labelledby="steps-title">
         <div className="container">

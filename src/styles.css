@@ -2088,43 +2088,6 @@ a.store-btn:hover {
   }
 }
 
-/* ---------- Bandeau défilant ---------- */
-.marquee {
-  overflow: hidden;
-  padding: 18px 0;
-  background: var(--signal);
-  color: var(--navy);
-}
-
-.marquee__track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-}
-
-.marquee__group {
-  display: flex;
-  flex: none;
-}
-
-.marquee__group li {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  padding-right: 28px;
-  font: 700 clamp(1.4rem, 3vw, 2rem) / 1 var(--font-display);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.marquee__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--navy);
-}
-
 /* ---------- Comment ça marche : ligne de progression ---------- */
 .steps-wrap {
   position: relative;
