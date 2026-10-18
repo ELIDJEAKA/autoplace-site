@@ -38,7 +38,7 @@ export const SERVICES: Service[] = [
     points: [
       'Location à la journée, à la semaine ou au mois',
       'Conditions et caution affichées avant la réservation',
-      'Loueurs partenaires à Abidjan, Yamoussoukro et Bouaké',
+      'Loueurs partenaires près de chez vous',
       'Option avec chauffeur selon les loueurs',
     ],
   },
@@ -125,21 +125,6 @@ export const SOS_NUMBERS = [
   { label: 'Police secours', number: '170', desc: 'Sécurité, accident sur la voie publique' },
 ];
 
-export const CITIES = [
-  {
-    name: 'Abidjan',
-    desc: "Du Plateau à Yopougon, de Cocody à Port-Bouët : vendeurs, loueurs et dépanneurs dans toutes les communes.",
-  },
-  {
-    name: 'Yamoussoukro',
-    desc: 'Un réseau de partenaires dans la capitale politique pour acheter, louer et entretenir votre véhicule.',
-  },
-  {
-    name: 'Bouaké',
-    desc: "Pièces, entretien et assistance au cœur du pays, sur l'axe Nord-Sud.",
-  },
-];
-
 export const FAQ: FaqItem[] = [
   {
     q: "En quoi consiste le contrôle 30 points ?",
@@ -154,8 +139,8 @@ export const FAQ: FaqItem[] = [
     a: "Il suffit de votre numéro de téléphone : vous recevez un code par SMS pour confirmer votre inscription. Vous pouvez ensuite enregistrer vos favoris et vos recherches.",
   },
   {
-    q: 'Dans quelles villes AutoPlace est-il disponible ?',
-    a: "AutoPlace est actif à Abidjan, Yamoussoukro et Bouaké. Le réseau de vendeurs et de prestataires s'étend progressivement à d'autres villes de Côte d'Ivoire.",
+    q: 'Où AutoPlace est-il disponible ?',
+    a: "AutoPlace est disponible partout où nos vendeurs et prestataires sont présents. La carte de l'application vous montre ceux qui se trouvent près de chez vous, et le réseau s'agrandit progressivement.",
   },
   {
     q: 'Le dépannage fonctionne-t-il vraiment la nuit ?',

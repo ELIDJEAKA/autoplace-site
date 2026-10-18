@@ -36,7 +36,6 @@ export function Footer() {
             {config.contactPhone && (
               <li><a href={telHref(config.contactPhone)}>{config.contactPhone}</a></li>
             )}
-            <li>Abidjan · Yamoussoukro · Bouaké</li>
           </ul>
         </div>
       </div>

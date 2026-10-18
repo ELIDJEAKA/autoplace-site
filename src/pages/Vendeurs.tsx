@@ -1,4 +1,5 @@
 import { Icon, type IconName } from '../components/Icon';
+import { PhoneMockup } from '../components/PhoneMockup';
 import { Reveal } from '../components/Reveal';
 import { usePageMeta } from '../components/usePageMeta';
 import { config } from '../config';
@@ -54,7 +55,7 @@ export function Vendeurs() {
           <h1>Développez votre activité automobile avec AutoPlace</h1>
           <p className="page-hero__lead">
             Rejoignez un réseau de professionnels vérifiés et rendez votre offre visible auprès des automobilistes
-            d'Abidjan, de Yamoussoukro et de Bouaké.
+            qui cherchent près de chez eux.
           </p>
           <div className="btn-row">
             <a className="btn btn--signal" href={config.dashboardRegister}>
@@ -75,7 +76,7 @@ export function Vendeurs() {
           </Reveal>
           <ul className="cards cards--4">
             {BENEFITS.map((b, i) => (
-              <Reveal as="li" className="card" key={b.title} delay={i * 80}>
+              <Reveal as="li" className="card card--lift" key={b.title} delay={i * 80}>
                 <span className="icon-tile">
                   <Icon name={b.icon} />
                 </span>
@@ -89,7 +90,7 @@ export function Vendeurs() {
 
       <section className="section section--muted" aria-labelledby="audience-title">
         <div className="container split">
-          <Reveal className="split__copy">
+          <Reveal className="split__copy" variant="left">
             <p className="eyebrow">Pour qui ?</p>
             <h2 id="audience-title">Tous les métiers de l'automobile</h2>
             <p>
@@ -105,30 +106,8 @@ export function Vendeurs() {
               ))}
             </ul>
           </Reveal>
-          <Reveal className="split__visual">
-            <div className="dash-mock" aria-hidden="true">
-              <div className="dash-mock__top">
-                <span /> <span /> <span />
-              </div>
-              <div className="dash-mock__body">
-                <div className="dash-mock__side">
-                  <i /> <i /> <i /> <i />
-                </div>
-                <div className="dash-mock__main">
-                  <div className="dash-mock__kpis">
-                    <b /> <b /> <b />
-                  </div>
-                  <div className="dash-mock__chart">
-                    {[40, 65, 50, 80, 60, 90, 75].map((h, i) => (
-                      <em key={i} style={{ height: `${h}%` }} />
-                    ))}
-                  </div>
-                  <div className="dash-mock__rows">
-                    <u /> <u /> <u />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <Reveal className="split__visual" variant="right" delay={120}>
+            <PhoneMockup screens={['profil']} />
           </Reveal>
         </div>
       </section>

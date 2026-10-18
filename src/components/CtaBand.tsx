@@ -7,7 +7,7 @@ export function CtaBand() {
   return (
     <section className="section">
       <div className="container">
-        <Reveal className="cta-band">
+        <Reveal className="cta-band" variant="scale">
           <div>
             <h2>Votre prochain trajet commence ici</h2>
             <p>

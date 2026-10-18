@@ -15,7 +15,7 @@ depuis l'API.
 
 | Route | Contenu |
 | --- | --- |
-| `/` | Accueil : héros, services, « Comment ça marche », application, « Pourquoi AutoPlace », villes, FAQ, appel à l'action |
+| `/` | Accueil : héros, services, « Comment ça marche », application, « Pourquoi AutoPlace », vendeurs près de chez vous, FAQ, appel à l'action |
 | `/services` | Une section détaillée par service (ancres `#achat`, `#location`, `#pieces`, `#assurance`, `#depannage`, `#entretien`, `#fiche`) |
 | `/vendeurs` | Avantages pour les professionnels, lien vers l'inscription du dashboard |
 | `/a-propos` | Mission, ancrage, valeurs |

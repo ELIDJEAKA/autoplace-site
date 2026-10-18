@@ -43,8 +43,8 @@ export function About() {
             </p>
             <h2>Notre ancrage</h2>
             <p>
-              Nous avons commencé à Abidjan, Yamoussoukro et Bouaké, en travaillant avec des professionnels locaux qui
-              connaissent leurs clients et leurs routes. Notre réseau s'agrandit progressivement, ville après ville.
+              Nous travaillons avec des professionnels locaux qui connaissent leurs clients et leurs routes. Notre
+              réseau s'agrandit progressivement, pour que vous trouviez toujours un vendeur près de chez vous.
             </p>
           </Reveal>
         </div>
@@ -58,7 +58,7 @@ export function About() {
           </Reveal>
           <ul className="cards cards--3">
             {VALUES.map((v, i) => (
-              <Reveal as="li" className="card" key={v.title} delay={i * 80}>
+              <Reveal as="li" className="card card--lift" variant="scale" key={v.title} delay={i * 90}>
                 <span className="icon-tile">
                   <Icon name={v.icon} />
                 </span>

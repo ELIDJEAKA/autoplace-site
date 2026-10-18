@@ -48,5 +48,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), seoFiles(siteUrl)],
     server: { port: 5174 },
+    // Le chunk Three.js (scène 3D du héros, ~145 kB gzip) est chargé à la demande, jamais dans le bundle initial.
+    build: { chunkSizeWarningLimit: 600 },
   };
 });

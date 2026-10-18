@@ -3,6 +3,7 @@ import { Icon } from './Icon';
 
 export type FaqItem = { q: string; a: string };
 
+/** Accordéon : hauteur animée en CSS (grid-template-rows), panneau fermé masqué (visibility) aux lecteurs d'écran. */
 export function Faq({ items }: { items: FaqItem[] }) {
   const [open, setOpen] = useState<number | null>(0);
   const base = useId();
@@ -26,8 +27,10 @@ export function Faq({ items }: { items: FaqItem[] }) {
                 <Icon name="chevron" className="faq__chev" />
               </button>
             </h3>
-            <div id={panelId} role="region" aria-labelledby={btnId} className="faq__panel" hidden={!isOpen}>
-              <p>{item.a}</p>
+            <div id={panelId} role="region" aria-labelledby={btnId} className="faq__panel">
+              <div className="faq__inner">
+                <p>{item.a}</p>
+              </div>
             </div>
           </div>
         );

@@ -158,10 +158,6 @@ export function Contact() {
                     <a href={telHref(config.contactPhone)}>{config.contactPhone}</a>
                   </li>
                 )}
-                <li>
-                  <Icon name="pin" size={20} />
-                  <span>Abidjan · Yamoussoukro · Bouaké</span>
-                </li>
               </ul>
             </div>
             <SosBlock />

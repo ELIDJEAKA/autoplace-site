@@ -37,7 +37,7 @@ export function Services() {
           aria-labelledby={`${s.id}-title`}
         >
           <div className={`container split ${i % 2 ? 'split--reverse' : ''}`}>
-            <Reveal className="split__copy">
+            <Reveal className="split__copy" variant="left">
               <p className="eyebrow">Service {String(i + 1).padStart(2, '0')}</p>
               <h2 id={`${s.id}-title`}>{s.title}</h2>
               <p>{s.intro}</p>
@@ -50,7 +50,7 @@ export function Services() {
                 ))}
               </ul>
             </Reveal>
-            <Reveal className="split__visual">
+            <Reveal className="split__visual" variant="scale" delay={120}>
               {s.id === 'depannage' ? (
                 <SosBlock headingLevel={3} />
               ) : (
