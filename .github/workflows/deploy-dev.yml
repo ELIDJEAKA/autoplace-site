@@ -20,10 +20,10 @@ jobs:
     name: Lint, types et build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci --no-audit --no-fund
       - run: npm run lint
@@ -41,7 +41,7 @@ jobs:
     outputs:
       image: ${{ steps.meta.outputs.image }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - id: meta
         run: |
           owner="${GITHUB_REPOSITORY_OWNER,,}"
@@ -84,7 +84,7 @@ jobs:
       IMAGE: ${{ needs.build.outputs.image }}
       SSH_USER: ${{ vars.DEPLOY_SSH_USER || secrets.DEPLOY_SSH_USER }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Clé SSH
         run: |
