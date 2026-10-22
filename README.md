@@ -76,7 +76,7 @@ Workflow `.github/workflows/deploy-dev.yml` :
 
 Dans *Settings → Environments*, créer l'environnement **`dev`** avec :
 
-- Secrets : `DEPLOY_SSH_KEY` (clé privée), `DEPLOY_KNOWN_HOSTS` (recommandé ; sinon `ssh-keyscan` est utilisé)
+- Secrets : `DEPLOY_SSH_KEY` (clé privée), `DEPLOY_KNOWN_HOSTS` (**obligatoire** : ligne `known_hosts` du serveur, empreinte vérifiée hors bande ; le déploiement échoue sans)
 - Variable ou secret : `DEPLOY_SSH_USER`
 - Variables facultatives : `VITE_SITE_URL`, `VITE_DASHBOARD_URL`, `VITE_PLAY_STORE_URL`, `VITE_APP_STORE_URL`,
   `VITE_CONTACT_EMAIL`, `VITE_CONTACT_PHONE` (les défauts ci-dessus s'appliquent si elles sont absentes)
