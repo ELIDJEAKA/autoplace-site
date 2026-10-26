@@ -62,7 +62,7 @@ jobs:
             VITE_DASHBOARD_URL=${{ vars.VITE_DASHBOARD_URL || 'http://45.90.161.191:5173' }}
             VITE_PLAY_STORE_URL=${{ vars.VITE_PLAY_STORE_URL }}
             VITE_APP_STORE_URL=${{ vars.VITE_APP_STORE_URL }}
-            VITE_CONTACT_EMAIL=${{ vars.VITE_CONTACT_EMAIL || 'contact@autoplace.ci' }}
+            VITE_CONTACT_EMAIL=${{ vars.VITE_CONTACT_EMAIL || 'autoeburni@gmail.com' }}
             VITE_CONTACT_PHONE=${{ vars.VITE_CONTACT_PHONE }}
           tags: |
             ${{ steps.meta.outputs.image }}

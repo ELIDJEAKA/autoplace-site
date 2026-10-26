@@ -7,7 +7,7 @@ export const config = {
   dashboardRegister: `${dashboard}/register`,
   playStoreUrl: clean(import.meta.env.VITE_PLAY_STORE_URL),
   appStoreUrl: clean(import.meta.env.VITE_APP_STORE_URL),
-  contactEmail: clean(import.meta.env.VITE_CONTACT_EMAIL) || 'contact@autoplace.ci',
+  contactEmail: clean(import.meta.env.VITE_CONTACT_EMAIL) || 'autoeburni@gmail.com',
   contactPhone: clean(import.meta.env.VITE_CONTACT_PHONE),
 } as const;
 
