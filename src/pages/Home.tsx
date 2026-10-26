@@ -249,7 +249,7 @@ export function Home() {
             </div>
             <div className="btn-row enter" style={{ '--d': '760ms' } as CSSProperties}>
               <a className="btn btn--signal" href={config.dashboardRegister}>
-                Devenir vendeur <Icon name="arrow" size={18} className="btn__arrow" />
+                Espace vendeur <Icon name="arrow" size={18} className="btn__arrow" />
               </a>
               <Link className="btn btn--ghost-light" to="/services">
                 Découvrir les services

@@ -44,7 +44,7 @@ const STEPS = [
 
 export function Vendeurs() {
   usePageMeta(
-    'Devenir vendeur',
+    'Espace vendeur',
     'Garages, concessionnaires, loueurs, magasins de pièces et dépanneurs : rejoignez AutoEburni, gérez votre stock depuis le back-office et soyez visible sur la carte.',
   );
   return (

@@ -17,7 +17,7 @@ export function Footer() {
           <h2 className="site-footer__title">Découvrir</h2>
           <ul>
             <li><Link to="/services">Nos services</Link></li>
-            <li><Link to="/vendeurs">Devenir vendeur</Link></li>
+            <li><Link to="/vendeurs">Espace vendeur</Link></li>
             <li><Link to="/a-propos">À propos</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
