@@ -1392,6 +1392,17 @@ a.store-btn:hover {
   color: #2d3a45;
 }
 
+.prose ol,
+.prose ul {
+  color: #2d3a45;
+  padding-left: 1.4em;
+  margin: 0.8em 0;
+}
+
+.prose li + li {
+  margin-top: 0.4em;
+}
+
 .notice {
   background: rgb(242 183 5 / 18%);
   border-left: 4px solid var(--signal);

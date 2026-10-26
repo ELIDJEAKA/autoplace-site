@@ -44,6 +44,7 @@ export function Footer() {
         <ul>
           <li><Link to="/mentions-legales">Mentions légales</Link></li>
           <li><Link to="/confidentialite">Politique de confidentialité</Link></li>
+          <li><Link to="/suppression-compte">Supprimer mon compte</Link></li>
         </ul>
       </div>
     </footer>

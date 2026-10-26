@@ -102,10 +102,86 @@ export function Confidentialite() {
       <p>
         Conformément à la loi n° 2013-450 relative à la protection des données à caractère personnel, vous disposez
         d'un droit d'accès, de rectification, d'opposition et de suppression de vos données. Vous pouvez l'exercer en
-        écrivant à <a href={`mailto:${config.contactEmail}`}>{config.contactEmail}</a>. Vous pouvez également
+        écrivant à <a href={`mailto:${config.contactEmail}`}>{config.contactEmail}</a>. Pour supprimer votre compte,
+        suivez la procédure décrite sur la page <Link to="/suppression-compte">Supprimer mon compte</Link>. Vous pouvez également
         saisir l'autorité de protection compétente (ARTCI). <Todo>Vérifier et compléter les références légales.</Todo>
       </p>
       <p className="muted">Dernière mise à jour : <Todo>date à compléter</Todo></p>
     </LegalPage>
+  );
+}
+
+const DELETION_SUBJECT = 'Suppression de mon compte AutoEburni';
+const DELETION_BODY = [
+  'Bonjour,',
+  '',
+  'Je demande la suppression de mon compte AutoEburni et des données associées.',
+  '',
+  'Numéro de téléphone du compte : ',
+  'Nom (facultatif) : ',
+  '',
+  'Merci.',
+].join('\n');
+
+/** Procédure de suppression de compte (URL exigée par Google Play et l'App Store). */
+export function SuppressionCompte() {
+  usePageMeta(
+    'Supprimer mon compte',
+    'Comment demander la suppression de votre compte AutoEburni et des données associées.',
+  );
+  const mailto = `mailto:${config.contactEmail}?subject=${encodeURIComponent(DELETION_SUBJECT)}&body=${encodeURIComponent(DELETION_BODY)}`;
+  return (
+    <>
+      <section className="page-hero page-hero--compact">
+        <div className="container">
+          <h1>Supprimer mon compte</h1>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container container--narrow prose">
+          <p>
+            Vous pouvez à tout moment demander la suppression de votre compte client de l'application AutoEburni
+            (Android, iPhone et web), ainsi que des données personnelles qui y sont associées.
+          </p>
+          <h2>Comment faire</h2>
+          <ol>
+            <li>
+              Écrivez-nous à <a href={mailto}>{config.contactEmail}</a> avec pour objet « {DELETION_SUBJECT} ».
+            </li>
+            <li>Indiquez le numéro de téléphone avec lequel vous vous connectez à l'application.</li>
+            <li>
+              Nous vous contactons sur ce numéro pour confirmer que la demande vient bien de vous, puis nous supprimons
+              le compte dans un délai de 30 jours maximum. Un message vous confirme la suppression.
+            </li>
+          </ol>
+          <p>
+            <a className="btn btn--primary" href={mailto}>
+              Demander la suppression
+            </a>
+          </p>
+          <h2>Données supprimées</h2>
+          <ul>
+            <li>Votre profil : nom, numéro de téléphone, adresse e-mail et code PIN ;</li>
+            <li>vos favoris, recherches enregistrées et préférences de notification ;</li>
+            <li>les appareils enregistrés pour les notifications ;</li>
+            <li>vos conversations et pièces jointes envoyées au support ;</li>
+            <li>les avis que vous avez publiés.</li>
+          </ul>
+          <h2>Données conservées</h2>
+          <p>
+            Les commandes, réservations et demandes de service déjà passées sont conservées sans votre nom ni votre
+            numéro (données anonymisées), le temps imposé par nos obligations légales et comptables, puis effacées.
+          </p>
+          <h2>Comptes vendeurs</h2>
+          <p>
+            Pour fermer un compte vendeur, écrivez à la même adresse depuis l'e-mail du compte : vos annonces seront
+            retirées et vos données supprimées selon les mêmes règles.
+          </p>
+          <p className="muted">
+            Voir aussi notre <Link to="/confidentialite">politique de confidentialité</Link>.
+          </p>
+        </div>
+      </section>
+    </>
   );
 }

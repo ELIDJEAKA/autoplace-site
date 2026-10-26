@@ -10,6 +10,7 @@ const ROUTES = [
   { path: '/contact', priority: '0.7' },
   { path: '/mentions-legales', priority: '0.2' },
   { path: '/confidentialite', priority: '0.2' },
+  { path: '/suppression-compte', priority: '0.2' },
 ];
 
 const DEFAULT_SITE_URL = 'http://45.90.161.191:3000';
