@@ -27,7 +27,7 @@ function LegalPage({ title, children }: { title: string; children: ReactNode }) 
 }
 
 export function MentionsLegales() {
-  usePageMeta('Mentions légales', 'Mentions légales du site AutoPlace : éditeur, hébergement et propriété intellectuelle.');
+  usePageMeta('Mentions légales', 'Mentions légales du site AutoEburni : éditeur, hébergement et propriété intellectuelle.');
   return (
     <LegalPage title="Mentions légales">
       <h2>Éditeur du site</h2>
@@ -56,7 +56,7 @@ export function MentionsLegales() {
       </p>
       <h2>Responsabilité</h2>
       <p>
-        AutoPlace met en relation des particuliers et des professionnels. Les transactions et prestations sont conclues
+        AutoEburni met en relation des particuliers et des professionnels. Les transactions et prestations sont conclues
         directement entre les parties. Les conditions précises de responsabilité sont décrites dans les conditions
         générales d'utilisation <Todo>à rédiger</Todo>.
       </p>
@@ -71,7 +71,7 @@ export function MentionsLegales() {
 export function Confidentialite() {
   usePageMeta(
     'Politique de confidentialité',
-    'Comment AutoPlace collecte, utilise et protège vos données personnelles, et comment exercer vos droits.',
+    'Comment AutoEburni collecte, utilise et protège vos données personnelles, et comment exercer vos droits.',
   );
   return (
     <LegalPage title="Politique de confidentialité">
@@ -95,7 +95,7 @@ export function Confidentialite() {
       </p>
       <h2>Destinataires</h2>
       <p>
-        Les données sont destinées à AutoPlace et, lorsque vous les contactez, aux vendeurs et prestataires concernés.
+        Les données sont destinées à AutoEburni et, lorsque vous les contactez, aux vendeurs et prestataires concernés.
         Liste des sous-traitants : <Todo>à compléter</Todo>.
       </p>
       <h2>Vos droits</h2>

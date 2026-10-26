@@ -19,7 +19,7 @@ export const SERVICES: Service[] = [
     title: "Achat de véhicules d'occasion contrôlés",
     short: 'Des véhicules passés au contrôle 30 points, avec prix affichés en FCFA et vendeurs identifiés.',
     intro:
-      "Acheter une voiture d'occasion ne devrait pas être un pari. Chaque véhicule mis en avant sur AutoPlace fait l'objet d'un contrôle en 30 points et d'une fiche détaillée, pour que vous sachiez exactement ce que vous achetez.",
+      "Acheter une voiture d'occasion ne devrait pas être un pari. Chaque véhicule mis en avant sur AutoEburni fait l'objet d'un contrôle en 30 points et d'une fiche détaillée, pour que vous sachiez exactement ce que vous achetez.",
     points: [
       'Contrôle 30 points : moteur, freinage, carrosserie, électricité, pneumatiques…',
       'Prix affichés en FCFA, sans frais cachés',
@@ -139,15 +139,15 @@ export const FAQ: FaqItem[] = [
     a: "Il suffit de votre numéro de téléphone : vous recevez un code par SMS pour confirmer votre inscription. Vous pouvez ensuite enregistrer vos favoris et vos recherches.",
   },
   {
-    q: 'Où AutoPlace est-il disponible ?',
-    a: "AutoPlace est disponible partout où nos vendeurs et prestataires sont présents. La carte de l'application vous montre ceux qui se trouvent près de chez vous, et le réseau s'agrandit progressivement.",
+    q: 'Où AutoEburni est-il disponible ?',
+    a: "AutoEburni est disponible partout où nos vendeurs et prestataires sont présents. La carte de l'application vous montre ceux qui se trouvent près de chez vous, et le réseau s'agrandit progressivement.",
   },
   {
     q: 'Le dépannage fonctionne-t-il vraiment la nuit ?',
     a: "Oui, la demande d'assistance est disponible 24h/24 et 7j/7. Le délai d'intervention dépend de votre position et des dépanneurs disponibles à proximité. En cas de blessé, appelez immédiatement le SAMU (185) ou les sapeurs-pompiers (180).",
   },
   {
-    q: 'Je suis garagiste ou concessionnaire, comment rejoindre AutoPlace ?',
+    q: 'Je suis garagiste ou concessionnaire, comment rejoindre AutoEburni ?',
     a: "Créez votre compte vendeur depuis l'espace professionnel. Après vérification de votre activité, vous pourrez publier votre stock, apparaître sur la carte et recevoir les demandes des clients.",
   },
 ];

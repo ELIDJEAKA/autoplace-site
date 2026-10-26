@@ -1,5 +1,5 @@
 /**
- * Captures réelles de l'application mobile AutoPlace (thème sombre), converties en WebP 360 / 720 px.
+ * Captures réelles de l'application mobile AutoEburni (thème sombre), converties en WebP 360 / 720 px.
  * « recherche » provient d'une capture sur téléphone (barres système retirées).
  */
 import accueil360 from '../assets/app/accueil-360.webp';
@@ -32,7 +32,7 @@ export const APP_SCREENS = {
     accueil360,
     accueil720,
     1558,
-    "Écran d'accueil de l'application AutoPlace : barre de recherche, services (assurance, dépannage, entretien), derniers véhicules et pièces",
+    "Écran d'accueil de l'application AutoEburni : barre de recherche, services (assurance, dépannage, entretien), derniers véhicules et pièces",
   ),
   recherche: shot(
     recherche360,

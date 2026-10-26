@@ -8,7 +8,7 @@ import { SERVICES } from '../data/content';
 export function Services() {
   usePageMeta(
     'Nos services',
-    "Véhicules d'occasion contrôlés, location, pièces et accessoires, assurance auto, dépannage 24h/24, entretien à domicile et historique du véhicule : découvrez les services AutoPlace.",
+    "Véhicules d'occasion contrôlés, location, pièces et accessoires, assurance auto, dépannage 24h/24, entretien à domicile et historique du véhicule : découvrez les services AutoEburni.",
   );
   return (
     <>

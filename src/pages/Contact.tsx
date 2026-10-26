@@ -32,7 +32,7 @@ function validate(f: Fields): Errors {
 export function Contact() {
   usePageMeta(
     'Contact',
-    "Une question, un partenariat ou besoin d'aide ? Contactez l'équipe AutoPlace. En cas d'urgence sur la route : SAMU 185, sapeurs-pompiers 180, police 170.",
+    "Une question, un partenariat ou besoin d'aide ? Contactez l'équipe AutoEburni. En cas d'urgence sur la route : SAMU 185, sapeurs-pompiers 180, police 170.",
   );
   const [fields, setFields] = useState<Fields>({ name: '', email: '', phone: '', subject: '', message: '' });
   const [errors, setErrors] = useState<Errors>({});
@@ -56,7 +56,7 @@ export function Contact() {
     const lines = [fields.message.trim(), '', '—', `Nom : ${fields.name.trim()}`, `E-mail : ${fields.email.trim()}`];
     if (fields.phone.trim()) lines.push(`Téléphone : ${fields.phone.trim()}`);
     const body = lines.join('\n');
-    const href = `mailto:${config.contactEmail}?subject=${encodeURIComponent(`[AutoPlace] ${fields.subject}`)}&body=${encodeURIComponent(body)}`;
+    const href = `mailto:${config.contactEmail}?subject=${encodeURIComponent(`[AutoEburni] ${fields.subject}`)}&body=${encodeURIComponent(body)}`;
     window.location.href = href;
     setSent(true);
   };

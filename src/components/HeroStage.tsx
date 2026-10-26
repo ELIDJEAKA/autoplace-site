@@ -23,7 +23,7 @@ function pickMode(): Mode {
   return cores <= 4 ? 'lite' : '3d';
 }
 
-/** Illustration statique (repli) : une route qui se trace jusqu'au repère AutoPlace. */
+/** Illustration statique (repli) : une route qui se trace jusqu'au repère AutoEburni. */
 function HeroRoad() {
   const d = 'M-6 98 C 18 90, 26 74, 42 66 S 66 46, 74 34 S 84 20, 86 15';
   return (
@@ -35,7 +35,7 @@ function HeroRoad() {
       <span className="hero-road__pin">
         <span className="hero-road__ring" />
         <span className="hero-road__ring hero-road__ring--late" />
-        <img src="/brand/mark.svg" alt="" width="72" height="72" />
+        <img src="/brand/mark-dark.svg" alt="" width="72" height="72" />
       </span>
     </div>
   );

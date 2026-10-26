@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container site-footer__grid">
         <div className="site-footer__brand">
-          <img src="/brand/logo-dark.svg" alt="AutoPlace" width="150" height="43" loading="lazy" />
+          <img src="/brand/logo-dark.svg" alt="AutoEburni" width="152" height="52" loading="lazy" />
           <p>
             La plateforme qui réunit tout ce dont votre véhicule a besoin en Côte d'Ivoire : achat, location, pièces,
             assurance, entretien et dépannage.
@@ -40,7 +40,7 @@ export function Footer() {
         </div>
       </div>
       <div className="container site-footer__bottom">
-        <p>© {year} AutoPlace. Tous droits réservés.</p>
+        <p>© {year} AutoEburni. Tous droits réservés.</p>
         <ul>
           <li><Link to="/mentions-legales">Mentions légales</Link></li>
           <li><Link to="/confidentialite">Politique de confidentialité</Link></li>

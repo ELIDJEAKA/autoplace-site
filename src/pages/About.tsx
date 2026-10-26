@@ -12,7 +12,7 @@ const VALUES: { icon: IconName; title: string; text: string }[] = [
 export function About() {
   usePageMeta(
     'À propos',
-    "AutoPlace est née d'une conviction : acheter, entretenir et assurer son véhicule en Côte d'Ivoire devrait être simple, transparent et accessible à tous.",
+    "AutoEburni est née d'une conviction : acheter, entretenir et assurer son véhicule en Côte d'Ivoire devrait être simple, transparent et accessible à tous.",
   );
   return (
     <>
@@ -21,7 +21,7 @@ export function About() {
           <p className="eyebrow eyebrow--light">À propos</p>
           <h1>Rendre l'automobile plus simple en Côte d'Ivoire</h1>
           <p className="page-hero__lead">
-            AutoPlace rassemble dans une même plateforme les services dont chaque automobiliste a besoin, et les
+            AutoEburni rassemble dans une même plateforme les services dont chaque automobiliste a besoin, et les
             professionnels capables de les rendre.
           </p>
         </div>
@@ -37,7 +37,7 @@ export function About() {
               démarches tiennent dans une seule application.
             </p>
             <p>
-              AutoPlace met en relation les automobilistes avec des vendeurs, loueurs, garages, assureurs et
+              AutoEburni met en relation les automobilistes avec des vendeurs, loueurs, garages, assureurs et
               dépanneurs vérifiés. Le contrôle des véhicules, les avis des clients et le paiement sur place sont au
               cœur de notre approche : chacun avance en confiance.
             </p>

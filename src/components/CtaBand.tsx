@@ -12,7 +12,7 @@ export function CtaBand() {
             <h2>Votre prochain trajet commence ici</h2>
             <p>
               Téléchargez l'application pour trouver un véhicule, une pièce ou un dépanneur près de chez vous. Vous
-              êtes professionnel ? Rejoignez le réseau de vendeurs AutoPlace.
+              êtes professionnel ? Rejoignez le réseau de vendeurs AutoEburni.
             </p>
           </div>
           <div className="cta-band__actions">

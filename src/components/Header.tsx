@@ -56,8 +56,8 @@ export function Header() {
   return (
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="container site-header__inner">
-        <Link to="/" className="brand" aria-label="AutoPlace, retour à l'accueil">
-          <img src="/brand/logo-dark.svg" alt="AutoPlace" width="140" height="40" />
+        <Link to="/" className="brand" aria-label="AutoEburni, retour à l'accueil">
+          <img src="/brand/logo-dark.svg" alt="AutoEburni" width="140" height="48" />
         </Link>
 
         <button

@@ -45,14 +45,14 @@ const STEPS = [
 export function Vendeurs() {
   usePageMeta(
     'Devenir vendeur',
-    'Garages, concessionnaires, loueurs, magasins de pièces et dépanneurs : rejoignez AutoPlace, gérez votre stock depuis le back-office et soyez visible sur la carte.',
+    'Garages, concessionnaires, loueurs, magasins de pièces et dépanneurs : rejoignez AutoEburni, gérez votre stock depuis le back-office et soyez visible sur la carte.',
   );
   return (
     <>
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow eyebrow--light">Espace professionnels</p>
-          <h1>Développez votre activité automobile avec AutoPlace</h1>
+          <h1>Développez votre activité automobile avec AutoEburni</h1>
           <p className="page-hero__lead">
             Rejoignez un réseau de professionnels vérifiés et rendez votre offre visible auprès des automobilistes
             qui cherchent près de chez eux.
@@ -94,7 +94,7 @@ export function Vendeurs() {
             <p className="eyebrow">Pour qui ?</p>
             <h2 id="audience-title">Tous les métiers de l'automobile</h2>
             <p>
-              Que vous vendiez des véhicules, des pièces ou un savoir-faire, AutoPlace vous met en relation avec des
+              Que vous vendiez des véhicules, des pièces ou un savoir-faire, AutoEburni vous met en relation avec des
               clients qui cherchent exactement ce que vous proposez.
             </p>
             <ul className="checks">
@@ -116,7 +116,7 @@ export function Vendeurs() {
         <div className="container">
           <Reveal className="section__head">
             <p className="eyebrow">Inscription</p>
-            <h2 id="join-title">Rejoindre AutoPlace en trois étapes</h2>
+            <h2 id="join-title">Rejoindre AutoEburni en trois étapes</h2>
           </Reveal>
           <ol className="steps">
             {STEPS.map((s, i) => (

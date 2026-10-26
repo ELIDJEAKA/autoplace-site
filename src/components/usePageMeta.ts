@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SUFFIX = 'AutoPlace';
+const SUFFIX = 'AutoEburni';
 
 /** Met à jour <title> et la meta description pour la route courante. */
 export function usePageMeta(title: string, description: string) {

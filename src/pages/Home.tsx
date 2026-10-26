@@ -205,7 +205,7 @@ function animateHome({ gsap, ScrollTrigger, mm, root }: GsapApi) {
 export function Home() {
   usePageMeta(
     "Véhicules d'occasion, location, pièces et dépannage en Côte d'Ivoire",
-    "AutoPlace réunit l'achat de véhicules d'occasion contrôlés, la location, les pièces, l'assurance, l'entretien et le dépannage 24h/24, avec des professionnels vérifiés près de chez vous.",
+    "AutoEburni réunit l'achat de véhicules d'occasion contrôlés, la location, les pièces, l'assurance, l'entretien et le dépannage 24h/24, avec des professionnels vérifiés près de chez vous.",
   );
   const root = useRef<HTMLDivElement>(null);
   useGsap(root, animateHome);
@@ -242,7 +242,7 @@ export function Home() {
             </h1>
             <p className="hero__lead enter" style={{ '--d': '520ms' } as CSSProperties}>
               Achetez un véhicule d'occasion contrôlé, louez, trouvez vos pièces, assurez-vous et faites-vous dépanner
-              24h/24. AutoPlace rapproche les automobilistes ivoiriens des professionnels de confiance.
+              24h/24. AutoEburni rapproche les automobilistes ivoiriens des professionnels de confiance.
             </p>
             <div className="enter" style={{ '--d': '640ms' } as CSSProperties}>
               <AppButtons className="hero__stores" />
@@ -323,7 +323,7 @@ export function Home() {
             <p className="eyebrow eyebrow--light">L'application</p>
             <h2 id="app-title">Pensée pour la route, dans votre poche</h2>
             <p>
-              L'application AutoPlace vous montre ce qui est disponible autour de vous et garde en mémoire ce qui compte
+              L'application AutoEburni vous montre ce qui est disponible autour de vous et garde en mémoire ce qui compte
               pour vous.
             </p>
             <ul className="feature-list">
@@ -347,9 +347,9 @@ export function Home() {
       <section className="section" aria-labelledby="why-title">
         <div className="container">
           <Reveal className="section__head">
-            <p className="eyebrow">Pourquoi AutoPlace</p>
+            <p className="eyebrow">Pourquoi AutoEburni</p>
             <h2 id="why-title">La confiance, d'abord</h2>
-            <p>Nous avons construit AutoPlace autour de ce qui rassure vraiment quand on achète ou qu'on fait réparer.</p>
+            <p>Nous avons construit AutoEburni autour de ce qui rassure vraiment quand on achète ou qu'on fait réparer.</p>
           </Reveal>
           <ul className="cards cards--4" data-stagger="scale">
             {WHY.map((w) => (
@@ -390,7 +390,7 @@ export function Home() {
             <Reveal className="section__head">
               <p className="eyebrow">Autour de vous</p>
               <h2 id="nearby-title">Des vendeurs près de chez vous</h2>
-              <p>Partout où nos vendeurs sont présents, AutoPlace vous montre les plus proches.</p>
+              <p>Partout où nos vendeurs sont présents, AutoEburni vous montre les plus proches.</p>
             </Reveal>
             <ul className="nearby__list" data-stagger="right">
               {NEARBY.map((n) => (

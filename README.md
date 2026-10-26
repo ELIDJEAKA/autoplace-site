@@ -1,6 +1,6 @@
-# AutoPlace — site vitrine
+# AutoEburni — site vitrine
 
-Site de présentation d'AutoPlace (Côte d'Ivoire) : achat de véhicules d'occasion contrôlés, location, pièces,
+Site de présentation d'AutoEburni (Côte d'Ivoire) : achat de véhicules d'occasion contrôlés, location, pièces,
 assurance, dépannage 24h/24, entretien et historique du véhicule. Site **statique** : aucune donnée n'est lue
 depuis l'API.
 
@@ -15,7 +15,7 @@ depuis l'API.
 
 | Route | Contenu |
 | --- | --- |
-| `/` | Accueil : héros, services, « Comment ça marche », application, « Pourquoi AutoPlace », vendeurs près de chez vous, FAQ, appel à l'action |
+| `/` | Accueil : héros, services, « Comment ça marche », application, « Pourquoi AutoEburni », vendeurs près de chez vous, FAQ, appel à l'action |
 | `/services` | Une section détaillée par service (ancres `#achat`, `#location`, `#pieces`, `#assurance`, `#depannage`, `#entretien`, `#fiche`) |
 | `/vendeurs` | Avantages pour les professionnels, lien vers l'inscription du dashboard |
 | `/a-propos` | Mission, ancrage, valeurs |
