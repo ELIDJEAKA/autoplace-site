@@ -1,5 +1,5 @@
 const clean = (v: string | undefined) => (v ?? '').trim();
-const dashboard = (clean(import.meta.env.VITE_DASHBOARD_URL) || 'http://45.90.161.191:5173').replace(/\/+$/, '');
+const dashboard = (clean(import.meta.env.VITE_DASHBOARD_URL) || 'https://preview-espace-vendeurs.autoeburni.ci').replace(/\/+$/, '');
 
 export const config = {
   dashboardUrl: dashboard,
