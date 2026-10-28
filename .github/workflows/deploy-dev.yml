@@ -58,8 +58,8 @@ jobs:
           context: .
           push: true
           build-args: |
-            VITE_SITE_URL=${{ vars.VITE_SITE_URL || 'http://45.90.161.191:3000' }}
-            VITE_DASHBOARD_URL=${{ vars.VITE_DASHBOARD_URL || 'http://45.90.161.191:5173' }}
+            VITE_SITE_URL=${{ vars.VITE_SITE_URL || 'https://autoeburni.ci' }}
+            VITE_DASHBOARD_URL=${{ vars.VITE_DASHBOARD_URL || 'https://preview-espace-vendeurs.autoeburni.ci' }}
             VITE_PLAY_STORE_URL=${{ vars.VITE_PLAY_STORE_URL }}
             VITE_APP_STORE_URL=${{ vars.VITE_APP_STORE_URL }}
             VITE_CONTACT_EMAIL=${{ vars.VITE_CONTACT_EMAIL || 'autoeburni@gmail.com' }}
@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: dev
-      url: http://45.90.161.191:3000
+      url: https://autoeburni.ci
     permissions:
       contents: read
       packages: read
