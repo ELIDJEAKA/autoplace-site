@@ -1392,11 +1392,21 @@ a.store-btn:hover {
   color: #2d3a45;
 }
 
+.prose h3 {
+  font-size: 1.2rem;
+  margin: 1.2em 0 0.4em;
+}
+
 .prose ol,
 .prose ul {
+  list-style: disc;
   color: #2d3a45;
   padding-left: 1.4em;
   margin: 0.8em 0;
+}
+
+.prose ol {
+  list-style: decimal;
 }
 
 .prose li + li {
