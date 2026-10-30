@@ -290,18 +290,16 @@ export function SuppressionCompte() {
               location ou d’une pièce pour le retirer.
             </li>
             <li>
-              <strong>Avis sur un vendeur</strong> : ouvrez le profil du vendeur, puis « Supprimer mon avis ».
+              <strong>Avis sur un vendeur</strong> : ouvrez le profil du vendeur, puis touchez « Supprimer » sous votre
+              avis.
             </li>
             <li>
               <strong>Recherches enregistrées</strong> : Profil → Mes recherches, puis supprimez celles que vous ne
               voulez plus. Elles ne sont conservées que sur votre téléphone.
             </li>
             <li>
-              <strong>Nom et adresse e-mail</strong> : Profil → Paramètres, effacez-les de votre profil.
-            </li>
-            <li>
-              <strong>Toute autre donnée</strong> (messages au support, demandes, réservations, position enregistrée
-              dans une demande de dépannage…) : écrivez-nous à <a href={mailto}>{config.contactEmail}</a> en précisant
+              <strong>Toute autre donnée</strong> (nom, adresse e-mail, messages au support, demandes, réservations,
+              position enregistrée dans une demande de dépannage…) : écrivez-nous à <a href={mailto}>{config.contactEmail}</a> en précisant
               votre numéro de téléphone et les données à effacer. Nous les supprimons dans un délai de 30 jours maximum,
               sauf celles que la loi nous oblige à conserver (voir ci-dessus « Données conservées »).
             </li>
