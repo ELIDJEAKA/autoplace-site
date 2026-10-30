@@ -9,6 +9,8 @@ export const config = {
   appStoreUrl: clean(import.meta.env.VITE_APP_STORE_URL),
   contactEmail: clean(import.meta.env.VITE_CONTACT_EMAIL) || 'autoeburni@gmail.com',
   contactPhone: clean(import.meta.env.VITE_CONTACT_PHONE),
+  /** API AutoEburni (formulaire de contact). */
+  apiUrl: (clean(import.meta.env.VITE_API_URL) || 'https://preview-api.autoeburni.ci/api/v1').replace(/\/+$/, ''),
 } as const;
 
 /** Numéro au format tel: (chiffres et + uniquement). */

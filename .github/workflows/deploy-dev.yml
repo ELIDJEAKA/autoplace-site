@@ -64,6 +64,8 @@ jobs:
             VITE_APP_STORE_URL=${{ vars.VITE_APP_STORE_URL }}
             VITE_CONTACT_EMAIL=${{ vars.VITE_CONTACT_EMAIL || 'autoeburni@gmail.com' }}
             VITE_CONTACT_PHONE=${{ vars.VITE_CONTACT_PHONE }}
+            VITE_API_URL=${{ vars.VITE_API_URL || 'https://preview-api.autoeburni.ci/api/v1' }}
+            VITE_TURNSTILE_SITE_KEY=${{ vars.VITE_TURNSTILE_SITE_KEY || '0x4AAAAAAFqGtqS7kX8B3_Zd' }}
           tags: |
             ${{ steps.meta.outputs.image }}
             ${{ steps.meta.outputs.base }}:dev

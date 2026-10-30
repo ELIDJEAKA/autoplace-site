@@ -1,6 +1,7 @@
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { Icon } from '../components/Icon';
 import { SosBlock } from '../components/SosBlock';
+import { Turnstile, type TurnstileHandle } from '../components/Turnstile';
 import { usePageMeta } from '../components/usePageMeta';
 import { config, telHref } from '../config';
 
@@ -37,28 +38,57 @@ export function Contact() {
   const [fields, setFields] = useState<Fields>({ name: '', email: '', phone: '', subject: '', message: '' });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [captcha, setCaptcha] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
+  const [failure, setFailure] = useState('');
+  const turnstile = useRef<TurnstileHandle>(null);
 
   const set = (k: keyof Fields) => (ev: { target: { value: string } }) => {
     setFields((f) => ({ ...f, [k]: ev.target.value }));
     if (errors[k]) setErrors((e) => ({ ...e, [k]: undefined }));
   };
 
-  const onSubmit = (ev: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
+    setFailure('');
     const e = validate(fields);
     setErrors(e);
     const first = Object.keys(e)[0];
     if (first) {
       document.getElementById(`f-${first}`)?.focus();
-      setSent(false);
       return;
     }
-    const lines = [fields.message.trim(), '', '—', `Nom : ${fields.name.trim()}`, `E-mail : ${fields.email.trim()}`];
-    if (fields.phone.trim()) lines.push(`Téléphone : ${fields.phone.trim()}`);
-    const body = lines.join('\n');
-    const href = `mailto:${config.contactEmail}?subject=${encodeURIComponent(`[AutoEburni] ${fields.subject}`)}&body=${encodeURIComponent(body)}`;
-    window.location.href = href;
-    setSent(true);
+    if (!captcha) return setFailure('Merci de valider la vérification anti-robot ci-dessus.');
+    setSending(true);
+    try {
+      // Envoi direct à l'équipe (e-mail) ; « Répondre » dans notre messagerie vous écrit directement.
+      const response = await fetch(`${config.apiUrl}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nom: fields.name.trim(),
+          email: fields.email.trim(),
+          telephone: fields.phone.trim() || null,
+          sujet: fields.subject,
+          message: fields.message.trim(),
+          captcha,
+        }),
+      });
+      if (!response.ok) {
+        const detail = ((await response.json().catch(() => null)) as { detail?: unknown } | null)?.detail;
+        throw new Error(typeof detail === 'string' ? detail : '');
+      }
+      setSent(true);
+      setFields({ name: '', email: '', phone: '', subject: '', message: '' });
+    } catch (error) {
+      const message = error instanceof Error && error.message ? error.message : '';
+      setFailure(
+        `${message || 'Envoi impossible pour le moment.'} Vous pouvez aussi nous écrire directement à ${config.contactEmail}.`,
+      );
+    } finally {
+      setSending(false);
+      turnstile.current?.reset(); // un jeton ne sert qu'une fois
+    }
   };
 
   const fieldProps = (k: keyof Fields) => ({
@@ -92,12 +122,11 @@ export function Contact() {
 
       <section className="section">
         <div className="container contact-grid">
-          <form className="form card" noValidate onSubmit={onSubmit} aria-labelledby="form-title">
+          <form className="form card" noValidate onSubmit={(ev) => void onSubmit(ev)} aria-labelledby="form-title">
             <h2 id="form-title">Envoyer un message</h2>
             <p className="muted">
               Les champs marqués d'un <span aria-hidden="true">*</span>
-              <span className="sr-only">astérisque</span> sont obligatoires. Le bouton ouvre votre messagerie avec le
-              message pré-rempli.
+              <span className="sr-only">astérisque</span> sont obligatoires. Nous vous répondons par e-mail.
             </p>
             <div className="form__row">
               <div className="field">
@@ -135,13 +164,18 @@ export function Contact() {
               <textarea rows={6} required {...fieldProps('message')} />
               {err('message')}
             </div>
-            <button type="submit" className="btn btn--primary">
-              <Icon name="mail" size={18} /> Envoyer le message
+            <Turnstile ref={turnstile} onToken={setCaptcha} />
+            <button type="submit" className="btn btn--primary" disabled={sending}>
+              <Icon name="mail" size={18} /> {sending ? 'Envoi…' : 'Envoyer le message'}
             </button>
             <p className="form__status" role="status" aria-live="polite">
-              {sent &&
-                `Votre messagerie devrait s'ouvrir avec le message prêt à être envoyé. Si rien ne se passe, écrivez-nous directement à ${config.contactEmail}.`}
+              {sent && 'Message envoyé, merci ! L’équipe AutoEburni vous répondra par e-mail rapidement.'}
             </p>
+            {failure && (
+              <p className="field__err" role="alert">
+                {failure}
+              </p>
+            )}
           </form>
 
           <div className="contact-side">

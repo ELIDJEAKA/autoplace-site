@@ -137,6 +137,12 @@ export function Confidentialite() {
         </li>
         <li>Annonces publiées (véhicules, locations, pièces) et leurs photos.</li>
       </ul>
+      <h3>Si vous nous écrivez depuis le site</h3>
+      <p>
+        Le formulaire de contact transmet votre nom, votre adresse e-mail, votre téléphone (facultatif), le sujet et
+        votre message à l’équipe AutoEburni par e-mail, pour vous répondre. Ces messages sont conservés dans notre
+        messagerie le temps nécessaire au suivi de votre demande.
+      </p>
       <h3>Données techniques</h3>
       <p>
         Comme tout service en ligne, nos serveurs enregistrent l’adresse IP et la date des requêtes, pour la sécurité
@@ -165,7 +171,7 @@ export function Confidentialite() {
         <li>Google Cloud (Google LLC) : stockage des photos et fichiers, et Firebase Cloud Messaging pour les notifications.</li>
         <li>Brevo (Sendinblue SAS) : envoi des e-mails.</li>
         <li>Notre prestataire d’envoi de SMS : codes de vérification.</li>
-        <li>Cloudflare, Inc. : protection anti-robot de l’inscription des vendeurs (Turnstile).</li>
+        <li>Cloudflare, Inc. : protection anti-robot (Turnstile) de l’inscription des vendeurs et du formulaire de contact.</li>
         <li>OpenStreetMap : fonds de carte (votre adresse IP est transmise pour afficher la carte).</li>
         <li>Google Fonts : polices de caractères du site.</li>
       </ul>
