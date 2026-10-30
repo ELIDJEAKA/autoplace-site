@@ -282,6 +282,30 @@ export function SuppressionCompte() {
             Les commandes, réservations et demandes de service déjà passées sont conservées sans votre nom ni votre
             numéro (données anonymisées), le temps imposé par nos obligations légales et comptables, puis effacées.
           </p>
+          <h2 id="donnees">Supprimer seulement certaines données (sans supprimer le compte)</h2>
+          <p>Vous pouvez garder votre compte et effacer une partie de vos données :</p>
+          <ul>
+            <li>
+              <strong>Favoris</strong> : dans l’application, onglet Favoris, touchez le cœur d’un véhicule, d’une
+              location ou d’une pièce pour le retirer.
+            </li>
+            <li>
+              <strong>Avis sur un vendeur</strong> : ouvrez le profil du vendeur, puis « Supprimer mon avis ».
+            </li>
+            <li>
+              <strong>Recherches enregistrées</strong> : Profil → Mes recherches, puis supprimez celles que vous ne
+              voulez plus. Elles ne sont conservées que sur votre téléphone.
+            </li>
+            <li>
+              <strong>Nom et adresse e-mail</strong> : Profil → Paramètres, effacez-les de votre profil.
+            </li>
+            <li>
+              <strong>Toute autre donnée</strong> (messages au support, demandes, réservations, position enregistrée
+              dans une demande de dépannage…) : écrivez-nous à <a href={mailto}>{config.contactEmail}</a> en précisant
+              votre numéro de téléphone et les données à effacer. Nous les supprimons dans un délai de 30 jours maximum,
+              sauf celles que la loi nous oblige à conserver (voir ci-dessus « Données conservées »).
+            </li>
+          </ul>
           <h2>Comptes vendeurs</h2>
           <p>
             Pour fermer un compte vendeur, écrivez à la même adresse depuis l'e-mail du compte : vos annonces seront
