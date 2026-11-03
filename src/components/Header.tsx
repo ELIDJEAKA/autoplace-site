@@ -97,7 +97,7 @@ export function Header() {
               <Icon name="alert" size={18} /> SOS 24h/24
             </Link>
             <a className="btn btn--signal btn--sm" href={config.dashboardLogin}>
-              Espace vendeur
+              Espace professionnel
             </a>
           </div>
         </nav>

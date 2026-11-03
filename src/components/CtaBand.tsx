@@ -19,7 +19,7 @@ export function CtaBand() {
             <AppButtons />
             <div className="btn-row">
               <a className="btn btn--signal" href={config.dashboardRegister}>
-                Espace vendeur
+                Espace professionnel
               </a>
               <Link className="btn btn--ghost-light" to="/contact">
                 Nous contacter

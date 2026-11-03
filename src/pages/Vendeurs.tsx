@@ -37,21 +37,21 @@ const AUDIENCE = [
 ];
 
 const STEPS = [
-  { title: 'Créez votre compte', text: 'Renseignez votre activité et vos coordonnées depuis l’espace vendeur.' },
+  { title: 'Créez votre compte', text: 'Renseignez votre activité et vos coordonnées depuis l’espace professionnel.' },
   { title: 'Faites vérifier votre activité', text: 'Notre équipe valide votre profil pour garantir la confiance des acheteurs.' },
   { title: 'Publiez et recevez des demandes', text: 'Mettez en ligne votre stock et répondez aux clients depuis votre tableau de bord.' },
 ];
 
 export function Vendeurs() {
   usePageMeta(
-    'Espace vendeur',
+    'Espace professionnel',
     'Garages, concessionnaires, loueurs, magasins de pièces et dépanneurs : rejoignez AutoEburni, gérez votre stock depuis le back-office et soyez visible sur la carte.',
   );
   return (
     <>
       <section className="page-hero">
         <div className="container">
-          <p className="eyebrow eyebrow--light">Espace professionnels</p>
+          <p className="eyebrow eyebrow--light">Espace professionnel</p>
           <h1>Développez votre activité automobile avec AutoEburni</h1>
           <p className="page-hero__lead">
             Rejoignez un réseau de professionnels vérifiés et rendez votre offre visible auprès des automobilistes

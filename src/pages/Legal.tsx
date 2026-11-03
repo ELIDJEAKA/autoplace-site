@@ -70,13 +70,13 @@ export function MentionsLegales() {
 export function Confidentialite() {
   usePageMeta(
     'Politique de confidentialité',
-    'Données collectées par AutoEburni (application mobile, application web, espace vendeurs, site), usages, partenaires, durées de conservation et droits.',
+    'Données collectées par AutoEburni (application mobile, application web, espace professionnel, site), usages, partenaires, durées de conservation et droits.',
   );
   return (
     <LegalPage title="Politique de confidentialité">
       <p>
         Cette politique s’applique à l’application mobile AutoEburni (Android et iPhone), à l’application web, à
-        l’espace vendeurs et à ce site. Elle explique quelles données nous collectons, pourquoi, avec qui elles sont
+        l’espace professionnel et à ce site. Elle explique quelles données nous collectons, pourquoi, avec qui elles sont
         partagées, combien de temps elles sont conservées et comment exercer vos droits.
       </p>
 

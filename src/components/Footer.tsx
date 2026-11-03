@@ -25,7 +25,7 @@ export function Footer() {
         <div>
           <h2 className="site-footer__title">Professionnels</h2>
           <ul>
-            <li><a href={config.dashboardLogin}>Espace vendeur</a></li>
+            <li><a href={config.dashboardLogin}>Espace professionnel</a></li>
             <li><a href={config.dashboardRegister}>Créer un compte vendeur</a></li>
           </ul>
         </div>
