@@ -13,7 +13,6 @@ concurrency:
 env:
   DEPLOY_HOST: 45.90.161.191 # elidjeaka-dev (même serveur que l'API et le dashboard)
   DEPLOY_DIR: autoplace-site-dev
-  SITE_PORT: 3000
 
 jobs:
   check:
@@ -129,8 +128,9 @@ jobs:
 
       - name: Vérification
         run: |
+          # Le port 3000 n'est publié que sur 127.0.0.1 : la vérification passe par le domaine public (TLS).
           for i in $(seq 1 30); do
-            if curl -fsS -o /dev/null "http://$DEPLOY_HOST:$SITE_PORT/"; then echo "Site vitrine en ligne"; exit 0; fi
+            if curl -fsS -o /dev/null "https://autoeburni.ci/"; then echo "Site vitrine en ligne"; exit 0; fi
             sleep 2
           done
           ssh target "cd ~/$DEPLOY_DIR && docker compose --env-file .image logs --tail 80 site"
