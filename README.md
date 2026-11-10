@@ -40,8 +40,8 @@ Copier `.env.example` en `.env`. Les variables sont **figées au moment du build
 
 | Variable | Défaut | Rôle |
 | --- | --- | --- |
-| `VITE_SITE_URL` | `http://45.90.161.191:3000` | URL publique : balises Open Graph, canonical, `sitemap.xml`, `robots.txt` |
-| `VITE_DASHBOARD_URL` | `http://45.90.161.191:5173` | Back-office vendeurs : « Espace vendeur » → `/login`, « Devenir vendeur » → `/register` |
+| `VITE_SITE_URL` | `https://autoeburni.ci` | URL publique : balises Open Graph, canonical, `sitemap.xml`, `robots.txt` |
+| `VITE_DASHBOARD_URL` | `https://preview-espace-vendeurs.autoeburni.ci` | Back-office vendeurs : « Espace vendeur » → `/login`, « Devenir vendeur » → `/register` |
 | `VITE_PLAY_STORE_URL` | _(vide)_ | Lien Google Play ; vide → bouton « Bientôt disponible » |
 | `VITE_APP_STORE_URL` | _(vide)_ | Lien App Store ; vide → bouton « Bientôt disponible » |
 | `VITE_CONTACT_EMAIL` | `autoeburni@gmail.com` | Adresse du formulaire de contact et du pied de page |
@@ -54,7 +54,7 @@ Toute nouvelle route publique doit être ajoutée à `ROUTES` dans `vite.config.
 
 ```bash
 docker build -t autoplace-site \
-  --build-arg VITE_DASHBOARD_URL=http://45.90.161.191:5173 \
+  --build-arg VITE_DASHBOARD_URL=https://preview-espace-vendeurs.autoeburni.ci \
   --build-arg VITE_CONTACT_EMAIL=autoeburni@gmail.com .
 docker run --rm -p 3000:80 autoplace-site   # http://localhost:3000
 ```

@@ -13,7 +13,7 @@ const ROUTES = [
   { path: '/suppression-compte', priority: '0.2' },
 ];
 
-const DEFAULT_SITE_URL = 'http://45.90.161.191:3000';
+const DEFAULT_SITE_URL = 'https://autoeburni.ci';
 
 /** Injecte l'URL du site dans index.html et génère robots.txt + sitemap.xml au build. */
 function seoFiles(siteUrl: string): Plugin {
