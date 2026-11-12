@@ -6,8 +6,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
 COPY . .
-ARG VITE_SITE_URL=http://45.90.161.191:3000
-ARG VITE_DASHBOARD_URL=http://45.90.161.191:5173
+ARG VITE_SITE_URL=https://autoeburni.ci
+ARG VITE_DASHBOARD_URL=https://preview-espace-vendeurs.autoeburni.ci
 ARG VITE_PLAY_STORE_URL=
 ARG VITE_APP_STORE_URL=
 ARG VITE_CONTACT_EMAIL=autoeburni@gmail.com
