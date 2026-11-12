@@ -3,7 +3,7 @@ import { Icon } from '../components/Icon';
 import { usePageMeta } from '../components/usePageMeta';
 
 export function NotFound() {
-  usePageMeta('Page introuvable', "La page demandée n'existe pas ou a été déplacée.");
+  usePageMeta('Page introuvable', "La page demandée n'existe pas ou a été déplacée.", { noindex: true });
   return (
     <section className="section not-found">
       <div className="container container--narrow center">

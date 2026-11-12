@@ -4,6 +4,7 @@ import { MOTION_OK, useGsap, type GsapApi } from '../anim/useGsap';
 import { AppButtons } from '../components/AppButtons';
 import { CtaBand } from '../components/CtaBand';
 import { Faq } from '../components/Faq';
+import { JsonLd } from '../components/JsonLd';
 import { HeroStage } from '../components/HeroStage';
 import { Icon, type IconName } from '../components/Icon';
 import { PhoneMockup } from '../components/PhoneMockup';
@@ -212,6 +213,17 @@ export function Home() {
 
   return (
     <div ref={root}>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: FAQ.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a },
+          })),
+        }}
+      />
       <section className="hero">
         <div className="hero__blobs" aria-hidden="true">
           <span className="blob blob--teal" />
